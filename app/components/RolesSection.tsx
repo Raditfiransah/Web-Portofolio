@@ -108,7 +108,7 @@ const cards = [
 
 export default function RolesSection() {
   return (
-    <section className="w-full bg-black">
+    <section id="roles" className="w-full bg-black">
       <ScrollStack
         itemStackDistance={48}
         baseScale={0.9}

@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import RolesSection from "./components/RolesSection";
 import LogoLoop from "@/components/LogoLoop";
 import AppleCardsCarouselDemo from "@/components/apple-cards-carousel-demo";
+import Footer from "./components/Footer";
 
 const logos = [
   {
@@ -101,6 +102,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Footer />
     </>
   );
 }
