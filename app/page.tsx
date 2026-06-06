@@ -82,9 +82,9 @@ export default function Home() {
       <AppleCardsCarouselDemo />
       
       {/* LogoLoop Section */}
-      <section className="w-full bg-black py-24 md:py-32 flex flex-col items-center justify-center border-t border-white/5">
+      <section className="w-full bg-black py-10 md:py-16 flex flex-col items-center justify-center border-t border-white/5">
         <div className="max-w-7xl w-full px-6 md:px-12 flex flex-col items-center">
-          <h3 className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-zinc-500 mb-12 text-center">
+          <h3 className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-zinc-500 mb-8 text-center">
             Technologies I Work With
           </h3>
           <div className="w-full overflow-hidden">

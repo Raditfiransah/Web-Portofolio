@@ -89,7 +89,7 @@ span.split-parent {
   flex-direction: column;
   align-items: center;
   /* bottom padding = enough scroll room for last card to be fully seen */
-  padding-bottom: 80vh;
+  padding-bottom: 20vh;
 }
 
 /* Every item — including the last — has the same tall height.
@@ -98,7 +98,7 @@ span.split-parent {
 .scroll-stack-item {
   position: sticky;
   width: clamp(320px, 66.666vw, 960px);
-  height: 170vh;
+  height: 120vh;
   display: flex;
   align-items: flex-start;
   padding-top: 10vh; /* overridden per-item by JS */
