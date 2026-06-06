@@ -1,8 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
 }
 
 @theme inline {
@@ -12,15 +13,80 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Hero typography */
+.hero-port {
+  font-size: clamp(4.5rem, 13vw, 13rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-family: var(--font-geist-sans), "Arial Black", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero-folio {
+  font-size: clamp(4.5rem, 13vw, 13rem);
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+/* Ensure split-parent spans display inline */
+span.split-parent {
+  display: inline !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  word-wrap: normal !important;
+}
+
+/* ─── ScrollStack ─────────────────────────────────────────── */
+
+.scroll-stack-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* bottom padding = enough scroll room for last card to be fully seen */
+  padding-bottom: 80vh;
+}
+
+/* Every item — including the last — has the same tall height.
+   This gives each card enough scroll distance to be visible before
+   the next one pins on top. */
+.scroll-stack-item {
+  position: sticky;
+  width: clamp(320px, 66.666vw, 960px);
+  height: 170vh;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 10vh; /* overridden per-item by JS */
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+/* The visible card — height set entirely by JS */
+.scroll-stack-card {
+  width: 100%;
+  border-radius: 2.5rem;
+  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.25s ease-out;
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.role-card {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
