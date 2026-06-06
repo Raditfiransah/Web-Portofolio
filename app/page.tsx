@@ -1,6 +1,7 @@
 import Hero from "./components/Hero";
 import RolesSection from "./components/RolesSection";
 import LogoLoop from "@/components/LogoLoop";
+import AppleCardsCarouselDemo from "@/components/apple-cards-carousel-demo";
 
 const logos = [
   {
@@ -77,6 +78,8 @@ export default function Home() {
     <>
       <Hero />
       <RolesSection />
+      
+      <AppleCardsCarouselDemo />
       
       {/* LogoLoop Section */}
       <section className="w-full bg-black py-24 md:py-32 flex flex-col items-center justify-center border-t border-white/5">
