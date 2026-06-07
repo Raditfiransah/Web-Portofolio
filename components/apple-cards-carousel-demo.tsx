@@ -82,75 +82,90 @@ const ProjectContent = ({
 
 const data = [
   {
+    category: "Machine Learning Application",
+    title: "Star-Correction: Multi-Task BERT for Sentiment & Rating Prediction.",
+    src: "/images/pexels-googledeepmind-17483874.jpg",
+    content: (
+      <ProjectContent
+        description="An Indonesian NLP system that predicts review sentiment and corrects inaccurate star ratings from Google Maps tourism reviews using a shared IndoBERT encoder with dual classification heads."
+        stack={[
+          "Python",
+          "PyTorch",
+          "IndoBERT",
+          "FastAPI",
+          "Streamlit",
+          "Optuna",
+          "MLflow",
+          "Docker"
+        ]}
+        features={[
+          "Multi-task learning model for sentiment classification and corrected star rating prediction",
+          "Shared IndoBERT encoder with separate sentiment and star-rating heads",
+          "Star embedding fusion to combine review text with original user rating",
+          "Class-weighted training to handle imbalanced review datasets",
+          "Optuna-based hyperparameter tuning with MLflow experiment tracking",
+          "FastAPI inference endpoint with Streamlit dashboard for interactive testing"
+        ]}
+        imageUrl="/images/pexels-googledeepmind-17483874.jpg"
+      />
+    ),
+  },
+  {
+    category: "Computer Vision Application",
+    title: "Show, Attend and Tell: Visual Attention Image Captioning.",
+    src: "/images/pexels-googledeepmind-25626431.jpg",
+    content: (
+      <ProjectContent
+        description="An image captioning system that generates descriptive captions from images using a ResNet50 encoder, LSTM decoder, and Bahdanau Attention trained on the Flickr8k dataset."
+        stack={[
+          "Python",
+          "PyTorch",
+          "ResNet50",
+          "LSTM",
+          "Bahdanau Attention",
+          "Streamlit",
+          "Docker",
+          "Flickr8k"
+        ]}
+        features={[
+          "ResNet50 encoder extracts spatial image features for caption generation",
+          "LSTM decoder generates word-by-word natural language descriptions",
+          "Bahdanau Attention lets the model focus on relevant image regions",
+          "Beam Search inference for more stable and higher-quality captions",
+          "BLEU score evaluation pipeline for measuring caption quality",
+          "Streamlit web app and Docker deployment for interactive usage"
+        ]}
+        imageUrl="/images/pexels-googledeepmind-25626431.jpg"
+      />
+    ),
+  },
+  {
     category: "Web Application",
-    title: "Zenith: Next-gen Analytics Dashboard.",
-    src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    title: "Architecture JobStreet: Architecture Career Discovery Platform.",
+    src: "/images/image.png",
     content: (
       <ProjectContent
-        description="A real-time data visualization platform designed for high-throughput enterprise systems. It provides deep analytics, customizable reporting widgets, and sleek animations."
-        stack={["React", "Next.js", "Tailwind CSS", "GSAP", "Laravel"]}
-        features={[
-          "Interactive dashboard widgets with real-time websocket updates",
-          "Ultra-smooth charts powered by custom SVG rendering and animations",
-          "Optimized Lighthouse scores with near-instant paint times",
-          "Comprehensive light/dark mode design system"
+        description="A specialized job discovery platform designed for architecture students and professionals. It streamlines job searching, portfolio showcasing, and career exploration within the architecture industry."
+        stack={[
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Node.js",
+          "PostgreSQL",
+          "Prisma",
+          "Docker"
         ]}
-        imageUrl="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
+        features={[
+          "Dedicated architecture-focused job marketplace",
+          "Advanced search and filtering for architecture-related roles",
+          "Portfolio showcase system for architects and students",
+          "Employer dashboard for posting and managing vacancies",
+          "Responsive UI optimized for desktop and mobile devices",
+          "Modern recruitment workflow tailored for the architecture industry"
+        ]}
+        imageUrl="/images/image.png"
       />
     ),
-  },
-  {
-    category: "Machine Learning",
-    title: "Aura AI: Real-time Object Detection.",
-    src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop",
-    content: (
-      <ProjectContent
-        description="An end-to-end computer vision pipeline capable of detecting, classifying, and tracking multiple objects in live video streams with ultra-low latency."
-        stack={["Python", "PyTorch", "TensorFlow", "FastAPI", "Docker"]}
-        features={[
-          "Live stream inference at 60+ FPS with state-of-the-art YOLO weights",
-          "Asynchronous batch processing backend using FastAPI and WebSockets",
-          "Scalable container deployment via Docker and Kubernetes",
-          "Comprehensive model monitoring dashboard built using Grafana"
-        ]}
-        imageUrl="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
-      />
-    ),
-  },
-  {
-    category: "UI/UX Design",
-    title: "Nova: A Premium Design System.",
-    src: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop",
-    content: (
-      <ProjectContent
-        description="A unified language and component library designed to align design teams and engineering, focusing heavily on accessibility, pixel perfection, and fluid animations."
-        stack={["Figma", "React", "Tailwind CSS", "TypeScript", "Storybook"]}
-        features={[
-          "Over 100+ production-ready responsive UI primitives",
-          "Strict WCAG 2.1 AA accessibility compliance",
-          "Custom Figma plugin to sync design tokens directly to Tailwind config",
-          "Automatic code generation for React and CSS modules"
-        ]}
-        imageUrl="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2055&auto=format&fit=crop"
-      />
-    ),
-  },
-  {
-    category: "MLOps & Infrastructure",
-    title: "Chronos: Automated ML Training Pipeline.",
-    src: "https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2194&auto=format&fit=crop",
-    content: (
-      <ProjectContent
-        description="An enterprise-grade continuous training and zero-downtime serving infrastructure built to automate ML lifecycles from raw data ingest to deployment."
-        stack={["Kubernetes", "Docker", "Prometheus", "Grafana", "Python"]}
-        features={[
-          "Automated model drift detection and automated retraining loops",
-          "Canary and blue-green deployment strategies managed via Kubernetes",
-          "Full system observability with Prometheus alerts and custom Grafana panels",
-          "Versioned model registry and automated metadata tracking"
-        ]}
-        imageUrl="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?q=80&w=2194&auto=format&fit=crop"
-      />
-    ),
-  },
+  }
 ];
