@@ -7,12 +7,6 @@ export default function Hero() {
     <section className="relative flex flex-col min-h-screen bg-black text-white overflow-hidden">
       {/* Navbar */}
       <nav className="flex items-center justify-between px-10 py-6 z-10">
-        <a
-          href="#work"
-          className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity"
-        >
-          Work
-        </a>
         {/* Logo / icon center */}
         <div className="absolute left-1/2 -translate-x-1/2">
           <svg
@@ -30,12 +24,6 @@ export default function Hero() {
             />
           </svg>
         </div>
-        <a
-          href="#contact"
-          className="text-sm font-medium tracking-wide hover:opacity-70 transition-opacity"
-        >
-          Contact
-        </a>
       </nav>
 
       {/* Hero content */}

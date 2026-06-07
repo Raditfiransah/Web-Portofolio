@@ -93,19 +93,22 @@ const ScrollStack = ({
     const paddingTopBase = Math.round(vh * 0.10);
     const bottomGap = Math.round(vh * 0.04);
 
+    if (items.length === 0) return;
+    const lastIndex = items.length - 1;
+    const lastPinTop = lastIndex * itemStackDistance;
+    const lastPaddingTop = paddingTopBase + lastPinTop;
+    const lastAvailable = vh - lastPaddingTop - bottomGap;
+    const uniformCardHeight = Math.max(300, lastAvailable);
+
     items.forEach((item, i) => {
       const pinTop = i * itemStackDistance;
       const paddingTop = paddingTopBase + pinTop;
       item.style.top = `${pinTop}px`;
       item.style.paddingTop = `${paddingTop}px`;
 
-      // Card height = viewport - pin-top - padding-from-pin-top - bottom-gap
-      // pin-top = pinTop (where item sticks), card face starts at paddingTop from viewport top
-      // so available height = vh - paddingTop - bottomGap
       const card = item.querySelector<HTMLElement>(".scroll-stack-card");
       if (card) {
-        const available = vh - paddingTop - bottomGap;
-        card.style.height = `${Math.max(300, available)}px`;
+        card.style.height = `${uniformCardHeight}px`;
         card.style.maxHeight = "none";
         card.style.minHeight = "none";
       }
