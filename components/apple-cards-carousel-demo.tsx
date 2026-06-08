@@ -122,17 +122,14 @@ const data = [
           "PyTorch",
           "ResNet50",
           "LSTM",
-          "Bahdanau Attention",
           "Streamlit",
           "Docker",
-          "Flickr8k"
+
         ]}
         features={[
           "ResNet50 encoder extracts spatial image features for caption generation",
           "LSTM decoder generates word-by-word natural language descriptions",
           "Bahdanau Attention lets the model focus on relevant image regions",
-          "Beam Search inference for more stable and higher-quality captions",
-          "BLEU score evaluation pipeline for measuring caption quality",
           "Streamlit web app and Docker deployment for interactive usage"
         ]}
         imageUrl="/images/pexels-googledeepmind-25626431.jpg"
@@ -147,22 +144,18 @@ const data = [
       <ProjectContent
         description="A specialized job discovery platform designed for architecture students and professionals. It streamlines job searching, portfolio showcasing, and career exploration within the architecture industry."
         stack={[
-          "Next.js",
-          "React",
-          "TypeScript",
-          "Tailwind CSS",
+          "Larevel",
+          "Vue",
+          "Tailwind",
           "Node.js",
-          "PostgreSQL",
-          "Prisma",
+          "MySQL",
           "Docker"
         ]}
         features={[
           "Dedicated architecture-focused job marketplace",
-          "Advanced search and filtering for architecture-related roles",
           "Portfolio showcase system for architects and students",
           "Employer dashboard for posting and managing vacancies",
-          "Responsive UI optimized for desktop and mobile devices",
-          "Modern recruitment workflow tailored for the architecture industry"
+          "Responsive UI optimized for desktop and mobile devices"
         ]}
         imageUrl="/images/image.png"
       />

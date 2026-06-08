@@ -59,7 +59,7 @@ body {
   font-weight: 900;
   text-transform: uppercase;
   font-family: var(--font-geist-sans), "Arial Black", sans-serif;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   line-height: 1;
 }
 
@@ -68,7 +68,7 @@ body {
   font-family: "Playfair Display", Georgia, serif;
   font-style: italic;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.05em;
   line-height: 1;
 }
 

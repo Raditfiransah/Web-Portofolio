@@ -29,31 +29,31 @@ export default function Hero() {
       {/* Hero content */}
       <div className="flex flex-col flex-1 items-center justify-center gap-10 px-6 text-center">
         {/* Big title: PORT + folio */}
-<div className="flex items-baseline leading-none select-none">
-  <SplitText
-    text="PORT"
-    tag="span"
-    className="hero-port"
-    delay={40}
-    duration={1}
-    from={{ opacity: 0, y: 80 }}
-    to={{ opacity: 1, y: 0 }}
-  />
+          <div className="flex items-baseline leading-none select-none">
+            <SplitText
+              text="PORT"
+              tag="span"
+              className="hero-port"
+              delay={40}
+              duration={1}
+              from={{ opacity: 0, y: 80 }}
+              to={{ opacity: 1, y: 0 }}
+            />
 
-  <SplitText
-    text="folio"
-    tag="span"
-    className="hero-folio"
-    delay={60}
-    duration={1.2}
-    from={{ opacity: 0, y: 80 }}
-    to={{ opacity: 1, y: 0 }}
-  />
-</div>
+            <SplitText
+              text="folio"
+              tag="span"
+              className="hero-folio"
+              delay={60}
+              duration={1.2}
+              from={{ opacity: 0, y: 80 }}
+              to={{ opacity: 1, y: 0 }}
+            />
+          </div>
 
         {/* Subtitle */}
         <SplitText
-          text="Hello! I'm Radit, a UI/UX Designer who will help in your project to create a cool, functional, and user-friendly website. Welcome to my portfolio website!"
+          text="Hello! I'm Radit, a Computer Science student passionate about AI, Machine Learning, Computer Vision, IoT, and Cloud Computing. Welcome to my portfolio!"
           tag="p"
           className="max-w-lg text-sm text-white/60 leading-relaxed"
           splitType="words"

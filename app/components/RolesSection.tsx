@@ -66,7 +66,7 @@ const cards = [
     title: "Role",
     subtitle: "What I do",
     description:
-      "I bridge design and engineering — crafting intuitive digital experiences while building the intelligent systems that power them.",
+      "Passionate about building intelligent solutions through AI, Machine Learning, Cloud Computing, and modern software development.",
     icon: <IconRole />,
     bg: "bg-white",
     text: "text-black",
@@ -76,7 +76,7 @@ const cards = [
     title: "AI / ML",
     subtitle: "Machine Learning",
     description:
-      "Building and fine-tuning machine learning models — from data pipelines and feature engineering to model training, evaluation, and deployment.",
+      "Building and fine-tuning machine learning models from data pipelines and feature engineering to model training, evaluation, and deployment.",
     icon: <IconAIML />,
     bg: "bg-zinc-900",
     text: "text-white",
@@ -86,7 +86,7 @@ const cards = [
     title: "MLOps",
     subtitle: "Operations & Infrastructure",
     description:
-      "Automating the full ML lifecycle with CI/CD pipelines, experiment tracking, model versioning, and scalable serving infrastructure.",
+      "Building reliable ML workflows with model deployment, monitoring, automation, and scalable cloud infrastructure.",
     icon: <IconMLOps />,
     bg: "bg-zinc-800",
     text: "text-white",
@@ -96,7 +96,7 @@ const cards = [
     title: "Website",
     subtitle: "Frontend & Full-stack",
     description:
-      "Designing and developing fast, accessible web applications — from pixel-perfect UIs to RESTful APIs and cloud deployments.",
+      "Creating responsive web applications with modern technologies, focusing on performance, usability, and seamless user experiences.",
     icon: <IconWebsite />,
     bg: "bg-zinc-100",
     text: "text-black",
