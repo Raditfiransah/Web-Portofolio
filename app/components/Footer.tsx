@@ -3,7 +3,29 @@
 import React from "react";
 import { IconBrandGithub, IconBrandLinkedin, IconBrandInstagram, IconMail } from "@tabler/icons-react";
 
-export default function Footer() {
+interface FooterProps {
+  data?: {
+    tagline?: string;
+    instagram?: string;
+    linkedin?: string;
+    github?: string;
+    email?: string;
+    copyright?: string;
+    thankYouText?: string;
+  };
+}
+
+export default function Footer({ data }: FooterProps) {
+  const tagline = data?.tagline || "Bridging design and engineering — crafting premium interactive digital experiences.";
+  const instagram = data?.instagram || "https://www.instagram.com/radit_firansah";
+  const linkedin = data?.linkedin || "https://www.linkedin.com/in/radit-firansah-550095397";
+  const github = data?.github || "https://github.com/Raditfiransah";
+  const email = data?.email || "raditfiransah180@gmail.com";
+  const copyright = data?.copyright || "© 2026 Radit. All rights reserved.";
+  const thankYouText = data?.thankYouText || "Thank You";
+
+  const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Collaboration%20Inquiry&body=Hi%20Radit%2C%0A%0AI%20hope%20you%27re%20doing%20well.%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work%20and%20technical%20background.%20I%20would%20be%20interested%20in%20discussing%20potential%20collaboration%20opportunities%20and%20learning%20more%20about%20your%20experience.%0A%0AI%20look%20forward%20to%20connecting%20with%20you.%0A%0AKind%20regards%2C%0A%0A%5BYour%20Name%5D`;
+
   return (
     <footer className="w-full bg-black border-t border-white/5 relative overflow-hidden pt-20 pb-0 flex flex-col justify-between">
       {/* Top Footer Section */}
@@ -29,14 +51,14 @@ export default function Footer() {
             </div>
             {/* Tagline */}
             <p className="text-zinc-400 text-sm max-w-xs leading-relaxed font-sans">
-              Bridging design and engineering — crafting premium interactive digital experiences.
+              {tagline}
             </p>
           </div>
 
           {/* Social Icons */}
           <div className="flex items-center gap-3">
             <a
-              href="https://www.instagram.com/radit_firansah"
+              href={instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -45,7 +67,7 @@ export default function Footer() {
               <IconBrandInstagram className="w-5 h-5" />
             </a>
             <a
-              href="https://www.linkedin.com/in/radit-firansah-550095397"
+              href={linkedin}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -54,7 +76,7 @@ export default function Footer() {
               <IconBrandLinkedin className="w-5 h-5" />
             </a>
             <a
-              href="https://github.com/Raditfiransah"
+              href={github}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
@@ -100,7 +122,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               <li>
                 <a
-                  href="https://mail.google.com/mail/?view=cm&fs=1&to=raditfiransah180@gmail.com&su=Collaboration%20Inquiry&body=Hi%20Radit%2C%0A%0AI%20hope%20you%27re%20doing%20well.%0A%0AI%20came%20across%20your%20portfolio%20and%20was%20impressed%20by%20your%20work%20and%20technical%20background.%20I%20would%20be%20interested%20in%20discussing%20potential%20collaboration%20opportunities%20and%20learning%20more%20about%20your%20experience.%0A%0AI%20look%20forward%20to%20connecting%20with%20you.%0A%0AKind%20regards%2C%0A%0A%5BYour%20Name%5D"
+                  href={emailLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-white text-sm transition-colors duration-200 font-sans flex items-center gap-1.5"
@@ -110,7 +132,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/radit-firansah-550095397"
+                  href={linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-white text-sm transition-colors duration-200 font-sans"
@@ -120,7 +142,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/Raditfiransah"
+                  href={github}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-white text-sm transition-colors duration-200 font-sans"
@@ -139,7 +161,7 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               <li>
                 <a
-                  href="https://www.instagram.com/radit_firansah"
+                  href={instagram}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-zinc-400 hover:text-white text-sm transition-colors duration-200 font-sans"
@@ -155,14 +177,14 @@ export default function Footer() {
       {/* Copyright & Large Footer Brand Text */}
       <div className="w-full flex flex-col items-center relative z-10 border-t border-white/5 pt-8 select-none">
         <div className="max-w-7xl mx-auto px-6 md:px-12 w-full flex flex-col sm:flex-row justify-between items-center gap-4 text-zinc-500 text-xs font-sans pb-4">
-          <p>© 2026 Radit. All rights reserved.</p>
+          <p>{copyright}</p>
           <p>Handcrafted with passion & code.</p>
         </div>
         
         {/* Large "Thank You" Footer Text (Partially cut-off at bottom) */}
         <div className="w-full overflow-hidden flex justify-center translate-y-[25%] pointer-events-none">
           <h2 className="text-[15vw] font-black uppercase tracking-tighter leading-none text-zinc-800/20 dark:text-zinc-800/40 select-none">
-            Thank You
+            {thankYouText}
           </h2>
         </div>
       </div>

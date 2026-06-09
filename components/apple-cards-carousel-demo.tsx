@@ -3,10 +3,39 @@
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 
-export default function AppleCardsCarouselDemo() {
-  const cards = data.map((card, index) => (
-    <Card key={card.src} card={card} index={index} />
-  ));
+interface ProjectData {
+  category: string;
+  title: string;
+  src: string;
+  description: string;
+  stack: string[];
+  features: string[];
+}
+
+interface AppleCardsCarouselDemoProps {
+  data?: ProjectData[];
+}
+
+export default function AppleCardsCarouselDemo({ data }: AppleCardsCarouselDemoProps) {
+  const displayData = data || defaultData;
+  const cards = displayData.map((project, index) => {
+    const cardObj = {
+      src: project.src,
+      title: project.title,
+      category: project.category,
+      content: (
+        <ProjectContent
+          description={project.description}
+          stack={project.stack}
+          features={project.features}
+          imageUrl={project.src}
+        />
+      ),
+    };
+    return (
+      <Card key={project.src + "-" + index} card={cardObj} index={index} />
+    );
+  });
 
   return (
     <section id="projects" className="w-full bg-black py-10 md:py-16 flex flex-col justify-center border-t border-white/5">
@@ -80,85 +109,69 @@ const ProjectContent = ({
   );
 };
 
-const data = [
+const defaultData: ProjectData[] = [
   {
     category: "Machine Learning Application",
     title: "Star-Correction: Multi-Task BERT for Sentiment & Rating Prediction.",
     src: "/images/pexels-googledeepmind-17483874.jpg",
-    content: (
-      <ProjectContent
-        description="An Indonesian NLP system that predicts review sentiment and corrects inaccurate star ratings from Google Maps tourism reviews using a shared IndoBERT encoder with dual classification heads."
-        stack={[
-          "Python",
-          "PyTorch",
-          "IndoBERT",
-          "FastAPI",
-          "Streamlit",
-          "Optuna",
-          "MLflow",
-          "Docker"
-        ]}
-        features={[
-          "Multi-task learning model for sentiment classification and corrected star rating prediction",
-          "Shared IndoBERT encoder with separate sentiment and star-rating heads",
-          "Star embedding fusion to combine review text with original user rating",
-          "Class-weighted training to handle imbalanced review datasets",
-          "Optuna-based hyperparameter tuning with MLflow experiment tracking",
-          "FastAPI inference endpoint with Streamlit dashboard for interactive testing"
-        ]}
-        imageUrl="/images/pexels-googledeepmind-17483874.jpg"
-      />
-    ),
+    description: "An Indonesian NLP system that predicts review sentiment and corrects inaccurate star ratings from Google Maps tourism reviews using a shared IndoBERT encoder with dual classification heads.",
+    stack: [
+      "Python",
+      "PyTorch",
+      "IndoBERT",
+      "FastAPI",
+      "Streamlit",
+      "Optuna",
+      "MLflow",
+      "Docker"
+    ],
+    features: [
+      "Multi-task learning model for sentiment classification and corrected star rating prediction",
+      "Shared IndoBERT encoder with separate sentiment and star-rating heads",
+      "Star embedding fusion to combine review text with original user rating",
+      "Class-weighted training to handle imbalanced review datasets",
+      "Optuna-based hyperparameter tuning with MLflow experiment tracking",
+      "FastAPI inference endpoint with Streamlit dashboard for interactive testing"
+    ]
   },
   {
     category: "Computer Vision Application",
     title: "Show, Attend and Tell: Visual Attention Image Captioning.",
     src: "/images/pexels-googledeepmind-25626431.jpg",
-    content: (
-      <ProjectContent
-        description="An image captioning system that generates descriptive captions from images using a ResNet50 encoder, LSTM decoder, and Bahdanau Attention trained on the Flickr8k dataset."
-        stack={[
-          "Python",
-          "PyTorch",
-          "ResNet50",
-          "LSTM",
-          "Streamlit",
-          "Docker",
-
-        ]}
-        features={[
-          "ResNet50 encoder extracts spatial image features for caption generation",
-          "LSTM decoder generates word-by-word natural language descriptions",
-          "Bahdanau Attention lets the model focus on relevant image regions",
-          "Streamlit web app and Docker deployment for interactive usage"
-        ]}
-        imageUrl="/images/pexels-googledeepmind-25626431.jpg"
-      />
-    ),
+    description: "An image captioning system that generates descriptive captions from images using a ResNet50 encoder, LSTM decoder, and Bahdanau Attention trained on the Flickr8k dataset.",
+    stack: [
+      "Python",
+      "PyTorch",
+      "ResNet50",
+      "LSTM",
+      "Streamlit",
+      "Docker"
+    ],
+    features: [
+      "ResNet50 encoder extracts spatial image features for caption generation",
+      "LSTM decoder generates word-by-word natural language descriptions",
+      "Bahdanau Attention lets the model focus on relevant image regions",
+      "Streamlit web app and Docker deployment for interactive usage"
+    ]
   },
   {
     category: "Web Application",
     title: "Architecture JobStreet: Architecture Career Discovery Platform.",
     src: "/images/image.png",
-    content: (
-      <ProjectContent
-        description="A specialized job discovery platform designed for architecture students and professionals. It streamlines job searching, portfolio showcasing, and career exploration within the architecture industry."
-        stack={[
-          "Larevel",
-          "Vue",
-          "Tailwind",
-          "Node.js",
-          "MySQL",
-          "Docker"
-        ]}
-        features={[
-          "Dedicated architecture-focused job marketplace",
-          "Portfolio showcase system for architects and students",
-          "Employer dashboard for posting and managing vacancies",
-          "Responsive UI optimized for desktop and mobile devices"
-        ]}
-        imageUrl="/images/image.png"
-      />
-    ),
+    description: "A specialized job discovery platform designed for architecture students and professionals. It streamlines job searching, portfolio showcasing, and career exploration within the architecture industry.",
+    stack: [
+      "Larevel",
+      "Vue",
+      "Tailwind",
+      "Node.js",
+      "MySQL",
+      "Docker"
+    ],
+    features: [
+      "Dedicated architecture-focused job marketplace",
+      "Portfolio showcase system for architects and students",
+      "Employer dashboard for posting and managing vacancies",
+      "Responsive UI optimized for desktop and mobile devices"
+    ]
   }
 ];

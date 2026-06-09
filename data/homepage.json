@@ -1,0 +1,182 @@
+{
+  "hero": {
+    "titlePart1": "PORT",
+    "titlePart2": "folio",
+    "subtitle": "Hello! I'm Radit, a Computer Science student passionate about AI, Machine Learning, Computer Vision, IoT, and Cloud Computing. Welcome to my portfolio!"
+  },
+  "roles": [
+    {
+      "title": "Role",
+      "subtitle": "What I do",
+      "description": "Passionate about building intelligent solutions through AI, Machine Learning, Cloud Computing, and modern software development.",
+      "iconType": "role",
+      "bg": "bg-white",
+      "text": "text-black",
+      "accent": "text-black/40"
+    },
+    {
+      "title": "AI / ML",
+      "subtitle": "Machine Learning",
+      "description": "Building and fine-tuning machine learning models from data pipelines and feature engineering to model training, evaluation, and deployment.",
+      "iconType": "aiml",
+      "bg": "bg-zinc-900",
+      "text": "text-white",
+      "accent": "text-white/40"
+    },
+    {
+      "title": "MLOps",
+      "subtitle": "Operations & Infrastructure",
+      "description": "Building reliable ML workflows with model deployment, monitoring, automation, and scalable cloud infrastructure.",
+      "iconType": "mlops",
+      "bg": "bg-zinc-800",
+      "text": "text-white",
+      "accent": "text-white/40"
+    },
+    {
+      "title": "Website",
+      "subtitle": "Frontend & Full-stack",
+      "description": "Creating responsive web applications with modern technologies, focusing on performance, usability, and seamless user experiences.",
+      "iconType": "website",
+      "bg": "bg-zinc-100",
+      "text": "text-black",
+      "accent": "text-black/40"
+    }
+  ],
+  "projects": [
+    {
+      "category": "Machine Learning Application",
+      "title": "Star-Correction: Multi-Task BERT for Sentiment & Rating Prediction.",
+      "src": "/images/pexels-googledeepmind-17483874.jpg",
+      "description": "An Indonesian NLP system that predicts review sentiment and corrects inaccurate star ratings from Google Maps tourism reviews using a shared IndoBERT encoder with dual classification heads.",
+      "stack": [
+        "Python",
+        "PyTorch",
+        "IndoBERT",
+        "FastAPI",
+        "Streamlit",
+        "Optuna",
+        "MLflow",
+        "Docker"
+      ],
+      "features": [
+        "Multi-task learning model for sentiment classification and corrected star rating prediction",
+        "Shared IndoBERT encoder with separate sentiment and star-rating heads",
+        "Star embedding fusion to combine review text with original user rating",
+        "Class-weighted training to handle imbalanced review datasets",
+        "Optuna-based hyperparameter tuning with MLflow experiment tracking",
+        "FastAPI inference endpoint with Streamlit dashboard for interactive testing"
+      ]
+    },
+    {
+      "category": "Computer Vision Application",
+      "title": "Show, Attend and Tell: Visual Attention Image Captioning.",
+      "src": "/images/pexels-googledeepmind-25626431.jpg",
+      "description": "An image captioning system that generates descriptive captions from images using a ResNet50 encoder, LSTM decoder, and Bahdanau Attention trained on the Flickr8k dataset.",
+      "stack": [
+        "Python",
+        "PyTorch",
+        "ResNet50",
+        "LSTM",
+        "Streamlit",
+        "Docker"
+      ],
+      "features": [
+        "ResNet50 encoder extracts spatial image features for caption generation",
+        "LSTM decoder generates word-by-word natural language descriptions",
+        "Bahdanau Attention lets the model focus on relevant image regions",
+        "Streamlit web app and Docker deployment for interactive usage"
+      ]
+    },
+    {
+      "category": "Web Application",
+      "title": "Architecture JobStreet: Architecture Career Discovery Platform.",
+      "src": "/images/image.png",
+      "description": "A specialized job discovery platform designed for architecture students and professionals. It streamlines job searching, portfolio showcasing, and career exploration within the architecture industry.",
+      "stack": [
+        "Larevel",
+        "Vue",
+        "Tailwind",
+        "Node.js",
+        "MySQL",
+        "Docker"
+      ],
+      "features": [
+        "Dedicated architecture-focused job marketplace",
+        "Portfolio showcase system for architects and students",
+        "Employer dashboard for posting and managing vacancies",
+        "Responsive UI optimized for desktop and mobile devices"
+      ]
+    }
+  ],
+  "logos": [
+    {
+      "name": "Docker",
+      "imageUrl": "https://cdn.simpleicons.org/docker",
+      "href": "https://www.docker.com"
+    },
+    {
+      "name": "Laravel",
+      "imageUrl": "https://cdn.simpleicons.org/laravel",
+      "href": "https://laravel.com"
+    },
+    {
+      "name": "Python",
+      "imageUrl": "https://cdn.simpleicons.org/python",
+      "href": "https://www.python.org"
+    },
+    {
+      "name": "JavaScript",
+      "imageUrl": "https://cdn.simpleicons.org/javascript",
+      "href": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
+    },
+    {
+      "name": "React",
+      "imageUrl": "https://cdn.simpleicons.org/react",
+      "href": "https://react.dev"
+    },
+    {
+      "name": "Kubernetes",
+      "imageUrl": "https://cdn.simpleicons.org/kubernetes",
+      "href": "https://kubernetes.io"
+    },
+    {
+      "name": "TensorFlow",
+      "imageUrl": "https://cdn.simpleicons.org/tensorflow",
+      "href": "https://www.tensorflow.org"
+    },
+    {
+      "name": "PyTorch",
+      "imageUrl": "https://cdn.simpleicons.org/pytorch",
+      "href": "https://pytorch.org"
+    },
+    {
+      "name": "GitHub",
+      "imageUrl": "https://cdn.simpleicons.org/github/ffffff",
+      "href": "https://github.com"
+    },
+    {
+      "name": "FastAPI",
+      "imageUrl": "https://cdn.simpleicons.org/fastapi",
+      "href": "https://fastapi.tiangolo.com"
+    },
+    {
+      "name": "Prometheus",
+      "imageUrl": "https://cdn.simpleicons.org/prometheus",
+      "href": "https://prometheus.io"
+    },
+    {
+      "name": "Grafana",
+      "imageUrl": "https://cdn.simpleicons.org/grafana",
+      "href": "https://grafana.com"
+    }
+  ],
+  "footer": {
+    "tagline": "Bridging design and engineering — crafting premium interactive digital experiences.",
+    "instagram": "https://www.instagram.com/radit_firansah",
+    "linkedin": "https://www.linkedin.com/in/radit-firansah-550095397",
+    "github": "https://github.com/Raditfiransah",
+    "email": "raditfiransah180@gmail.com",
+    "copyright": "© 2026 Radit. All rights reserved.",
+    "thankYouText": "Thank You"
+  }
+}

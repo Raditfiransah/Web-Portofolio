@@ -61,13 +61,27 @@ const IconWebsite = () => (
 
 /* ── Card data ──────────────────────────────────────────────── */
 
-const cards = [
+interface RoleCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  iconType: string; // "role" | "aiml" | "mlops" | "website"
+  bg: string;
+  text: string;
+  accent: string;
+}
+
+interface RolesSectionProps {
+  data?: RoleCard[];
+}
+
+const defaultCards: RoleCard[] = [
   {
     title: "Role",
     subtitle: "What I do",
     description:
       "Passionate about building intelligent solutions through AI, Machine Learning, Cloud Computing, and modern software development.",
-    icon: <IconRole />,
+    iconType: "role",
     bg: "bg-white",
     text: "text-black",
     accent: "text-black/40",
@@ -77,7 +91,7 @@ const cards = [
     subtitle: "Machine Learning",
     description:
       "Building and fine-tuning machine learning models from data pipelines and feature engineering to model training, evaluation, and deployment.",
-    icon: <IconAIML />,
+    iconType: "aiml",
     bg: "bg-zinc-900",
     text: "text-white",
     accent: "text-white/40",
@@ -87,7 +101,7 @@ const cards = [
     subtitle: "Operations & Infrastructure",
     description:
       "Building reliable ML workflows with model deployment, monitoring, automation, and scalable cloud infrastructure.",
-    icon: <IconMLOps />,
+    iconType: "mlops",
     bg: "bg-zinc-800",
     text: "text-white",
     accent: "text-white/40",
@@ -97,16 +111,32 @@ const cards = [
     subtitle: "Frontend & Full-stack",
     description:
       "Creating responsive web applications with modern technologies, focusing on performance, usability, and seamless user experiences.",
-    icon: <IconWebsite />,
+    iconType: "website",
     bg: "bg-zinc-100",
     text: "text-black",
     accent: "text-black/40",
   },
 ];
 
+const getIcon = (type: string) => {
+  switch (type) {
+    case "aiml":
+      return <IconAIML />;
+    case "mlops":
+      return <IconMLOps />;
+    case "website":
+      return <IconWebsite />;
+    case "role":
+    default:
+      return <IconRole />;
+  }
+};
+
 /* ── Section ────────────────────────────────────────────────── */
 
-export default function RolesSection() {
+export default function RolesSection({ data }: RolesSectionProps) {
+  const displayCards = data || defaultCards;
+
   return (
     <section id="roles" className="w-full bg-black">
       <ScrollStack
@@ -114,14 +144,14 @@ export default function RolesSection() {
         baseScale={0.9}
         itemScale={0.04}
       >
-        {cards.map((card) => (
+        {displayCards.map((card) => (
           <ScrollStackItem key={card.title}>
             <div
               className={`role-card ${card.bg} ${card.text} w-full h-full rounded-[2.5rem] p-10 md:p-14 flex flex-col justify-between`}
             >
               {/* Top row: icon + subtitle */}
               <div className="flex items-start justify-between">
-                <div className={`${card.accent} mb-6`}>{card.icon}</div>
+                <div className={`${card.accent} mb-6`}>{getIcon(card.iconType)}</div>
                 <span className={`text-sm font-medium tracking-widest uppercase ${card.accent}`}>
                   {card.subtitle}
                 </span>

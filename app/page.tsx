@@ -1,10 +1,14 @@
+import fs from "fs/promises";
+import path from "path";
 import Hero from "./components/Hero";
 import RolesSection from "./components/RolesSection";
 import LogoLoop from "@/components/LogoLoop";
 import AppleCardsCarouselDemo from "@/components/apple-cards-carousel-demo";
 import Footer from "./components/Footer";
 
-const logos = [
+export const dynamic = "force-dynamic";
+
+const staticLogosFallback = [
   {
     name: "Docker",
     imageUrl: "https://cdn.simpleicons.org/docker",
@@ -67,8 +71,27 @@ const logos = [
   },
 ];
 
-export default function Home() {
-  const loopLogos = logos.map((logo) => ({
+async function getHomepageData() {
+  try {
+    const filePath = path.join(process.cwd(), "data", "homepage.json");
+    const fileContent = await fs.readFile(filePath, "utf8");
+    return JSON.parse(fileContent);
+  } catch (error) {
+    console.error("Error loading homepage data:", error);
+    return null;
+  }
+}
+
+export default async function Home() {
+  const data = await getHomepageData();
+
+  const heroData = data?.hero;
+  const rolesData = data?.roles;
+  const projectsData = data?.projects;
+  const logosData = data?.logos || staticLogosFallback;
+  const footerData = data?.footer;
+
+  const loopLogos = logosData.map((logo: any) => ({
     src: logo.imageUrl,
     alt: logo.name,
     title: logo.name,
@@ -77,10 +100,10 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
-      <RolesSection />
+      <Hero data={heroData} />
+      <RolesSection data={rolesData} />
       
-      <AppleCardsCarouselDemo />
+      <AppleCardsCarouselDemo data={projectsData} />
       
       {/* LogoLoop Section */}
       <section className="w-full bg-black py-10 md:py-16 flex flex-col items-center justify-center border-t border-white/5">
@@ -103,7 +126,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Footer />
+      <Footer data={footerData} />
     </>
   );
 }

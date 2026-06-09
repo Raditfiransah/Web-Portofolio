@@ -2,7 +2,19 @@
 
 import SplitText from "./SplitText";
 
-export default function Hero() {
+interface HeroProps {
+  data?: {
+    titlePart1?: string;
+    titlePart2?: string;
+    subtitle?: string;
+  };
+}
+
+export default function Hero({ data }: HeroProps) {
+  const titlePart1 = data?.titlePart1 || "PORT";
+  const titlePart2 = data?.titlePart2 || "folio";
+  const subtitle = data?.subtitle || "Hello! I'm Radit, a Computer Science student passionate about AI, Machine Learning, Computer Vision, IoT, and Cloud Computing. Welcome to my portfolio!";
+
   return (
     <section className="relative flex flex-col min-h-screen bg-black text-white overflow-hidden">
       {/* Navbar */}
@@ -31,7 +43,8 @@ export default function Hero() {
         {/* Big title: PORT + folio */}
           <div className="flex items-baseline leading-none select-none">
             <SplitText
-              text="PORT"
+              key={titlePart1}
+              text={titlePart1}
               tag="span"
               className="hero-port"
               delay={40}
@@ -41,7 +54,8 @@ export default function Hero() {
             />
 
             <SplitText
-              text="folio"
+              key={titlePart2}
+              text={titlePart2}
               tag="span"
               className="hero-folio"
               delay={60}
@@ -53,7 +67,8 @@ export default function Hero() {
 
         {/* Subtitle */}
         <SplitText
-          text="Hello! I'm Radit, a Computer Science student passionate about AI, Machine Learning, Computer Vision, IoT, and Cloud Computing. Welcome to my portfolio!"
+          key={subtitle}
+          text={subtitle}
           tag="p"
           className="max-w-lg text-sm text-white/60 leading-relaxed"
           splitType="words"
