@@ -16,7 +16,11 @@ function verifyPasscode(req: Request) {
   return token === expectedPasscode;
 }
 
-export async function GET() {
+export async function GET(request: NextRequest) {
+  if (!verifyPasscode(request)) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
   try {
     const fileContent = await fs.readFile(DATA_FILE_PATH, "utf8");
     const data = JSON.parse(fileContent);
